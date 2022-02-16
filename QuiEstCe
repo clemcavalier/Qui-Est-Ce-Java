@@ -1,0 +1,151 @@
+package project;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class QuiEstCe {
+
+	static JFrame frame = new JFrame("Qui est-ce ?");
+
+	public static void main(String[] args) {
+
+		// Window
+		// --------------------------------------------------------------------------------------------------
+
+		frame.setSize(1200, 800);
+		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+
+		// Logo
+		// --------------------------------------------------------------------------------------------------
+
+		ImageIcon imageLogo = new ImageIcon("src/project/Images/logo.png");
+		JLabel labelLogo = new JLabel(imageLogo, JLabel.CENTER);
+
+
+		// Button replay
+		// -------------------------------------------------------------------------------------------
+
+		JButton btnReplay = new JButton("REPLAY");
+		btnReplay.setBounds(200,200,10,50);
+
+		// Left
+		// --------------------------------------------------------------------------------------------------
+
+		JPanel left = new JPanel();
+		left.setBackground(Color.blue);
+		left.setPreferredSize(new Dimension(300, 750));
+
+		left.setLayout(new GridBagLayout());
+
+		GridBagConstraints gbcLeft = new GridBagConstraints();
+		
+		
+		gbcLeft.gridwidth = GridBagConstraints.REMAINDER;
+		gbcLeft.gridx = 0;
+		gbcLeft.gridy = 0;
+
+		gbcLeft.gridheight = 1;
+		gbcLeft.gridwidth = 1;
+
+		left.add(labelLogo, gbcLeft);
+
+		
+		gbcLeft.gridy = 1;
+		
+		left.add(btnReplay, gbcLeft);
+
+		// Right
+		// --------------------------------------------------------------------------------------------------
+
+		JPanel right = new JPanel();
+		right.setBackground(Color.green);
+		right.setPreferredSize(new Dimension(900, 750));
+
+		// Images
+		// ------------------------------------------------------------------------------------------------
+
+		/*
+		 * 
+		 * Icon img1 = new ImageIcon("src/project/Images/img1.png"); Icon img2 = new
+		 * ImageIcon("src/project/Images/img2.png"); Icon img3 = new
+		 * ImageIcon("src/project/Images/img3.png"); Icon img4 = new
+		 * ImageIcon("src/project/Images/img4.png"); Icon img5 = new
+		 * ImageIcon("src/project/Images/img5.png"); Icon img6 = new
+		 * ImageIcon("src/project/Images/img6.png"); Icon img7 = new
+		 * ImageIcon("src/project/Images/img7.png"); Icon img8 = new
+		 * ImageIcon("src/project/Images/img8.png");
+		 * 
+		 * 
+		 * JButton btn1 = new JButton(img1); JButton btn2 = new JButton(img2); JButton
+		 * btn3 = new JButton(img3); JButton btn4 = new JButton(img4); JButton btn5 =
+		 * new JButton(img5); JButton btn6 = new JButton(img6); JButton btn7 = new
+		 * JButton(img7); JButton btn8 = new JButton(img8);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * btn1.setBounds(40,80,200,50);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * logo.setStretch(false);
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 * principal.add(logo); principal.add(btn1); principal.add(btn2);
+		 * principal.add(btn3); principal.add(btn4); principal.add(btn5);
+		 * principal.add(btn6); principal.add(btn7); principal.add(btn8);
+		 * 
+		 */
+
+		// Image random
+		// --------------------------------------------------------------------------------------------
+
+		// Container principal
+		// ----------------------------------------------------------------------------------------------
+
+		JPanel principal = new JPanel();
+
+		principal.setPreferredSize(new Dimension(1000, 750));
+		principal.setBackground(Color.orange);
+
+		principal.setLayout(new GridBagLayout());
+
+		GridBagConstraints gbc = new GridBagConstraints();
+
+		gbc.gridx = 0;
+		gbc.gridy = 0;
+
+		gbc.gridheight = 1;
+		gbc.gridwidth = 1;
+
+		principal.add(left, gbc);
+
+		gbc.gridwidth = GridBagConstraints.REMAINDER;
+		gbc.gridheight = GridBagConstraints.REMAINDER;
+		gbc.gridx = 1;
+
+		principal.add(right, gbc);
+
+		frame.setContentPane(principal);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+
+	}
+
+}
