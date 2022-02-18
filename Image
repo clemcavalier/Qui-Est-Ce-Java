@@ -1,0 +1,45 @@
+package project;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+public class Image {
+	
+	
+	private int nombre;
+	private ImageIcon img;
+	
+	private float opacity;
+	private JButton btn;
+	
+	
+	
+	
+	public Image (int nombre)  {
+		this.setNombre(nombre);
+		this.setBtn(new JButton(new ImageIcon("src/project/Images/img"+nombre+".png")));
+		return;
+		
+	}
+	
+	
+	public JButton getBtn() {
+		return btn;
+	}
+
+	public void setBtn(JButton btn) {
+		this.btn = btn;
+	}
+
+	public int getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(int nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setOpacity(float opacity) {
+	    this.opacity = opacity;
+	}
+}
