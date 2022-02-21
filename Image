@@ -3,6 +3,7 @@ package project;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+
 public class Image {
 	
 	
@@ -11,8 +12,6 @@ public class Image {
 	
 	private float opacity;
 	private JButton btn;
-	
-	
 	
 	
 	public Image (int nombre)  {
@@ -42,7 +41,6 @@ public class Image {
 	public void setOpacity(float opacity) {
 	    this.opacity = opacity;
 	}
-
 
 
 }
