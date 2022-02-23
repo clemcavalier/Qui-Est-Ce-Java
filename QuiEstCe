@@ -5,9 +5,9 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,13 +16,13 @@ public class QuiEstCe {
 
 	static JFrame frame = new JFrame("Qui est-ce ?");
 
-	public static void main(String[] args) {
+	public static void check() {
 
 		// Window
 		// --------------------------------------------------------------------------------------------------
 
 		frame.setSize(1400, 800);
-		frame.setResizable(true);
+		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
 
 		// Logo
@@ -30,18 +30,19 @@ public class QuiEstCe {
 
 		ImageIcon imageLogo = new ImageIcon("src/public/assets/Images/logo.png");
 		JLabel labelLogo = new JLabel(imageLogo, JLabel.CENTER);
+		
 
 		// Image random
 		// --------------------------------------------------------------------------------------------
 
-		/*Random rand = new Random();
-		int randomNum = rand.nextInt((max - min) + 1) + min;
-		JLabel MyImage = new JLabel(new ImageIcon("image" + randomNum + ".png")); */
+		Random rand = new Random();
+		int randomNum = rand.nextInt((24 - 1) + 1) + 1;
+		JLabel labelImageAleatoire = new JLabel(new ImageIcon("src/public/assets/Images/img250_" + randomNum + ".png"));
 
 		// Button replay
 		// -------------------------------------------------------------------------------------------
 
-		JButton btnReplay = new JButton("Replay");
+		BoutonReplay boutonReplay = new BoutonReplay();
 
 		// Left
 		// --------------------------------------------------------------------------------------------------
@@ -52,16 +53,8 @@ public class QuiEstCe {
 		left.setLayout(new FlowLayout());
 
 		left.add(labelLogo);
-		left.add(btnReplay);
-
-		// Images
-		// ------------------------------------------------------------------------------------------------
-		
-		/*MyJButtonActionListener instance = new MyJButtonActionListener();
-		
-		btn.addActionListener(instance);
-		*/
-		
+		left.add(boutonReplay.getBtnReplay());
+		left.add(labelImageAleatoire);
 
 		// Right
 		// --------------------------------------------------------------------------------------------------
@@ -71,21 +64,16 @@ public class QuiEstCe {
 		right.setPreferredSize(new Dimension(1100, 680));
 
 		right.setLayout(new FlowLayout());
-		
-		for (int i = 1 ; i <= 24 ; i++) {
-			
-			
 
-			right.add(new Bouton (i).getBtn());
-			
+		// Images
+		// ------------------------------------------------------------------------------------------------
+
+		for (int i = 1; i <= 24; i++) {
+
+			right.add(new Bouton(i).getBtn());
+
 		}
-		
-		
-		
-		
-		
-		
-		
+
 		// Container principal
 		// ----------------------------------------------------------------------------------------------
 
@@ -115,12 +103,13 @@ public class QuiEstCe {
 		frame.setContentPane(principal);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		
-		
+
 	}
 
+	public static void main(String[] args) {
 
-	
-	
+		check();
+
+	}
 
 }
