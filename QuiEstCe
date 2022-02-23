@@ -22,13 +22,13 @@ public class QuiEstCe {
 		// --------------------------------------------------------------------------------------------------
 
 		frame.setSize(1400, 800);
-		frame.setResizable(false);
+		frame.setResizable(true);
 		frame.setLocationRelativeTo(null);
 
 		// Logo
 		// --------------------------------------------------------------------------------------------------
 
-		ImageIcon imageLogo = new ImageIcon("src/project/Images/logo.png");
+		ImageIcon imageLogo = new ImageIcon("src/public/assets/Images/logo.png");
 		JLabel labelLogo = new JLabel(imageLogo, JLabel.CENTER);
 
 		// Image random
@@ -71,31 +71,15 @@ public class QuiEstCe {
 		right.setPreferredSize(new Dimension(1100, 680));
 
 		right.setLayout(new FlowLayout());
+		
+		for (int i = 1 ; i <= 24 ; i++) {
+			
+			
 
-		right.add(new Image(1).getBtn());
-		right.add(new Image(2).getBtn());
-		right.add(new Image(3).getBtn());
-		right.add(new Image(4).getBtn());
-		right.add(new Image(5).getBtn());
-		right.add(new Image(6).getBtn());
-		right.add(new Image(7).getBtn());
-		right.add(new Image(8).getBtn());
-		right.add(new Image(9).getBtn());
-		right.add(new Image(10).getBtn());
-		right.add(new Image(11).getBtn());
-		right.add(new Image(12).getBtn());
-		right.add(new Image(13).getBtn());
-		right.add(new Image(14).getBtn());
-		right.add(new Image(15).getBtn());
-		right.add(new Image(16).getBtn());
-		right.add(new Image(17).getBtn());
-		right.add(new Image(18).getBtn());
-		right.add(new Image(19).getBtn());
-		right.add(new Image(20).getBtn());
-		right.add(new Image(21).getBtn());
-		right.add(new Image(22).getBtn());
-		right.add(new Image(23).getBtn());
-		right.add(new Image(24).getBtn());
+			right.add(new Bouton (i).getBtn());
+			
+		}
+		
 		
 		
 		
@@ -134,6 +118,7 @@ public class QuiEstCe {
 		
 		
 	}
+
 
 	
 	
